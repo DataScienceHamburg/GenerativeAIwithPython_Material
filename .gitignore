@@ -1,0 +1,8 @@
+.env
+*.pdf
+*.html
+*.min.js
+*.css
+*.js
+*.pyc
+uv.lock

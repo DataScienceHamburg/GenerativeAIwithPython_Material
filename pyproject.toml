@@ -1,0 +1,25 @@
+[project]
+name = "generativeaiwithpython_material"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "absl-py>=2.2.2",
+    "datasets>=3.5.0",
+    "google-adk>=0.2.0",
+    "ipykernel>=6.29.5",
+    "langchain>=0.3.23",
+    "langchain-community>=0.3.21",
+    "langchain-groq>=0.3.2",
+    "langchain-openai>=0.3.14",
+    "llama-index>=0.12.31",
+    "llama-index-indices-managed-llama-cloud>=0.6.11",
+    "llama-index-tools-tavily-research>=0.3.0",
+    "llama-index-utils-workflow>=0.3.1",
+    "python-dotenv>=1.1.0",
+    "transformers>=4.51.3",
+    "torch==2.6.0+cu126",
+    "torchvision==0.21.0+cu126",
+    "torchaudio==2.6.0+cu126",
+]
