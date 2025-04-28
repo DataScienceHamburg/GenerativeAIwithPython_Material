@@ -19,7 +19,8 @@ dependencies = [
     "llama-index-utils-workflow>=0.3.1",
     "python-dotenv>=1.1.0",
     "transformers>=4.51.3",
-    "torch==2.6.0+cu126",
-    "torchvision==0.21.0+cu126",
-    "torchaudio==2.6.0+cu126",
+    "torch==2.6.0",
+    "torchvision",
+    "torchaudio",
+    "langchain-google-genai>=2.1.3",
 ]
