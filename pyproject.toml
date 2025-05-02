@@ -23,4 +23,6 @@ dependencies = [
     "torchvision",
     "torchaudio",
     "langchain-google-genai>=2.1.3",
+    "ollama>=0.4.8",
+    "langchain-ollama>=0.3.2",
 ]

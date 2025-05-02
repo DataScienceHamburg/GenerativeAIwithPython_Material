@@ -20,8 +20,8 @@ model = ChatOpenAI(model="gpt-4o-mini",
 chain = prompt | model | StrOutputParser()
 
 # %% invoke chain
-lazy_prompt = "summer, vacation, beach"
-task = "Shakespeare poem"
+lazy_prompt = "A mysterious fog rolls into a quiet coastal town."
+task = "Write a short story (around 500 words) exploring the impact of the fog on the town and its inhabitants. Consider what might be hidden within the fog."
 improved_prompt = chain.invoke({"lazy_prompt": lazy_prompt, "task": task})
 # %%
 print(improved_prompt)
@@ -30,7 +30,7 @@ print(improved_prompt)
 res = model.invoke(improved_prompt)
 print(res.content)
 
-# %%
-res = model.invoke("summer, vacation, beach, Shakespeare poem")
+# %% original prompt
+res = model.invoke(f"{lazy_prompt} {task}")
 print(res.content)
 # %%
