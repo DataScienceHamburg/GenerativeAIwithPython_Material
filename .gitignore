@@ -6,3 +6,10 @@
 *.js
 *.pyc
 uv.lock
+*.zip
+
+chroma_db/
+faiss/
+flickr_images/
+index.faiss
+index.pkl
