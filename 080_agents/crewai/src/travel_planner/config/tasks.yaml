@@ -1,0 +1,20 @@
+identify_city_task:
+  description: >
+    The initial phase of travel planning where the system, primarily driven by the City Selector Agent, analyzes user preferences (e.g., budget, interests, desired climate), the rough "location" provided by the user, the specific "period" of travel, and the "duration" of the trip. Based on this comprehensive input and global data, it proposes a shortlist of suitable destination cities. This task focuses on broad-stroke matching and initial recommendation.
+  expected_output: >
+    A shortlist of 2-3 suitable destination cities based on user inputs.
+  agent: city_selector_agent
+
+gather_info_task:
+  description: >
+    Once a potential city is selected, the Local Expert Agent takes the lead in this task. It involves deep-diving into the chosen destination to collect comprehensive information, specifically tailored to the user's specified "period" and "duration" of travel. This includes popular attractions, lesser-known local spots, dining recommendations, transportation options, cultural nuances, visa requirements, and any relevant local events occurring during the travel timeframe.
+  expected_output: >
+    Detailed information about the selected city, including attractions, dining, transport, customs, and relevant events for the specified period.
+  agent: local_expert_agent
+
+detail_planning_task:
+  description: >
+    The final stage, spearheaded by the Concierge Agent, where all gathered information is synthesized into a detailed, actionable travel itinerary. This task meticulously incorporates the user's specified "period" and "duration" of travel to suggest specific accommodations, propose daily activity schedules, recommend dining reservations, outline transportation logistics, and provide any necessary booking links or instructions to finalize the trip plan, ensuring every detail aligns with the travel timeframe.
+  expected_output: >
+    A complete, day-by-day travel itinerary with suggested accommodations, activities, dining, and logistical details.
+  agent: concierge_agent

@@ -3,6 +3,7 @@ import os
 import unittest
 import openai
 import anthropic
+import groq
 
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv(usecwd=True))
@@ -67,6 +68,27 @@ class TestEnvironment(unittest.TestCase):
             models,
             "Anthropic is not working. Check API_KEY key in .env file.")
 
+    def test_groq_variable(self):
+        if TestEnvironment.skip_env_variable_tests:
+            self.skipTest("Skipping Anthropic env variable test")
+
+        self.env_variable_exists('GROQ_API_KEY')
+        TestEnvironment.skip_groq_test = False
+
+    def test_groq_connection(self):
+        if TestEnvironment.skip_groq_test:
+            self.skipTest("Skipping Groq test")
+
+        llm = groq.Groq()
+        
+        try:
+            models = llm.models.list()
+        except anthropic.AuthenticationError as e:
+            models = None
+        self.assertIsNotNone(
+            models,
+            "Anthropic is not working. Check API_KEY key in .env file.")
+
 
         
 def suite():
@@ -74,6 +96,8 @@ def suite():
     suite.addTest(TestEnvironment('test_env_file_exists'))
     suite.addTest(TestEnvironment('test_openai_variable'))
     suite.addTest(TestEnvironment('test_openai_connection'))
+    suite.addTest(TestEnvironment('test_groq_variable'))
+    suite.addTest(TestEnvironment('test_groq_connection'))
     suite.addTest(TestEnvironment('test_anthropic_variable'))
     suite.addTest(TestEnvironment('test_anthropic_connection'))
     return suite

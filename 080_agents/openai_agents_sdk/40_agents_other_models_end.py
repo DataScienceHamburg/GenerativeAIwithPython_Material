@@ -1,5 +1,6 @@
 #%% packages
 from agents import Agent, Runner
+from agents.extensions.models.litellm_model import LitellmModel
 from dotenv import load_dotenv, find_dotenv
 _ = load_dotenv(find_dotenv(usecwd=True))
 
@@ -8,7 +9,6 @@ _ = load_dotenv(find_dotenv(usecwd=True))
 agent = Agent(
     name="Math Tutor",
     instructions="You provide help with math problems. Explain your reasoning at each step and include examples",
-    # model="gpt-4o-mini"
     model="litellm/anthropic/claude-3-5-sonnet-20240620",
 )
 

@@ -36,4 +36,5 @@ dependencies = [
     "openai-agents[litellm]>=0.1.0",
     "pydantic>=2.11.3",
     "anthropic>=0.56.0",
+    "ag2[openai]>=0.9.5",
 ]
