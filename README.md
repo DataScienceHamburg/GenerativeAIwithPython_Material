@@ -22,6 +22,8 @@ This is the accompanying book to the Udemy course.
 
 # Setup
 
+## Environment with uv
+
 Install the required package:
 
 ```bash
@@ -33,4 +35,32 @@ Run the following command to install the dependencies:
 ```bash
 uv sync
 ```
-	
+
+## Environment with venv
+
+Use venv if uv is not working.
+
+Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate the virtual environment on Linux:
+
+```bash
+source venv/bin/activate
+```
+
+Activate the virtual environment on Windows:
+
+```bash
+.\venv\Scripts\activate
+```
+
+Install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
