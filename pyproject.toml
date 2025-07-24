@@ -38,4 +38,5 @@ dependencies = [
     "anthropic>=0.56.0",
     "ag2[openai]>=0.9.5",
     "toml-to-requirements>=0.3.0",
+    "langgraph>=0.5.3",
 ]

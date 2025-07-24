@@ -1,10 +1,10 @@
 #%% packages
-import langgraph
+from langchain_openai import ChatOpenAI
+from IPython.display import Image, display
 from langgraph.graph import StateGraph, START, END
 from typing_extensions import TypedDict
-from langchain_openai import ChatOpenAI
-from langchain_core.messages import AIMessage, HumanMessage
-from langgraph.graph.message import add_messages
+from langgraph.prebuilt import ToolNode, tools_condition
+from langchain_core.messages import AIMessage, HumanMessage, AnyMessage
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv(usecwd=True))
 #%% LLM 
@@ -32,12 +32,6 @@ pprint(tool_call)
 #%% extract last message
 tool_call.additional_kwargs["tool_calls"]
 
-#%% graph
-from IPython.display import Image, display
-from langgraph.graph import StateGraph, START, END
-from typing_extensions import TypedDict
-from langchain_core.messages import AnyMessage
-from langgraph.prebuilt import ToolNode, tools_condition
 
 
 class MessagesState(TypedDict):
